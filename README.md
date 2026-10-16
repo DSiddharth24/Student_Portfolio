@@ -76,6 +76,8 @@ cd Student_Portfolio
 | D Siddharth | Developer / Design |
 | Karan M     | Developer          |
 | Poorvik NS  | Coder              |
+| Diganth     | JS CODER           |
+
 ---
 
 ## License
