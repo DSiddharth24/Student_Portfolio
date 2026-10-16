@@ -3,263 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Portfolio</title>
+  <title>Siddh — Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar">
-    <div class="nav-brand">Siddh.</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <!-- Hamburger (JS-driven) -->
-    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+  <nav>
+    <b>Siddh.</b>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="burger" onclick="this.classList.toggle('x');document.querySelector('.links').classList.toggle('open')">
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- ── HERO ── -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="hero-greeting">Hi, I'm</p>
-      <h1 class="hero-name">Siddh</h1>
-      <!-- typed text — content swapped by JS -->
-      <p class="hero-role"><span id="typed-role"></span><span class="cursor">|</span></p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
-      </div>
+    <div>
+      <p>Hi, I'm</p>
+      <h1>Siddh</h1>
+      <p class="role"><span id="typed"></span><span class="cur">|</span></p>
+      <a href="#projects" class="btn">View My Work</a>
+      <a href="#contact" class="btn out">Get In Touch</a>
     </div>
-    <div class="hero-avatar">
-      <div class="avatar-placeholder">S</div>
+    <div class="avatar">S</div>
+  </section>
+
+  <section id="about" class="fade">
+    <h2>About Me</h2>
+    <p>Passionate CS student who loves building for the web, solving problems, and exploring open-source projects.</p>
+    <div class="stats">
+      <div><strong>10+</strong><span>Projects</span></div>
+      <div><strong>3+</strong><span>Years Learning</span></div>
+      <div><strong>5+</strong><span>Technologies</span></div>
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>
-          I'm a passionate computer science student with a love for building things on the web.
-          I enjoy solving problems, learning new technologies, and creating projects that make
-          a real impact.
-        </p>
-        <p>
-          When I'm not coding, you'll find me exploring open-source projects, reading tech blogs,
-          or working on personal side projects.
-        </p>
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">Projects</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Years Learning</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">5+</span>
-            <span class="stat-label">Technologies</span>
-          </div>
-        </div>
-      </div>
+  <section id="skills" class="alt">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card fade">🌐 HTML &amp; CSS<div class="bar"><div data-w="90%"></div></div></div>
+      <div class="card fade">⚡ JavaScript<div class="bar"><div data-w="75%"></div></div></div>
+      <div class="card fade">🐍 Python<div class="bar"><div data-w="80%"></div></div></div>
+      <div class="card fade">🗄️ SQL<div class="bar"><div data-w="65%"></div></div></div>
+      <div class="card fade">🔧 Git &amp; GitHub<div class="bar"><div data-w="85%"></div></div></div>
+      <div class="card fade">📱 Responsive Design<div class="bar"><div data-w="88%"></div></div></div>
     </div>
   </section>
 
-  <!-- ── SKILLS ── -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <div class="skill-icon">🌐</div>
-          <h3>HTML &amp; CSS</h3>
-          <p>Building responsive, accessible, and well-structured web pages.</p>
-          <!-- progress bar — width animated by JS on scroll -->
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-level="90%"></div>
-          </div>
-          <span class="skill-level">90%</span>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">⚡</div>
-          <h3>JavaScript</h3>
-          <p>Writing interactive and dynamic functionality for the web.</p>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-level="75%"></div>
-          </div>
-          <span class="skill-level">75%</span>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">🐍</div>
-          <h3>Python</h3>
-          <p>Scripting, automation, and backend development.</p>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-level="80%"></div>
-          </div>
-          <span class="skill-level">80%</span>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">🗄️</div>
-          <h3>SQL</h3>
-          <p>Querying and managing relational databases.</p>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-level="65%"></div>
-          </div>
-          <span class="skill-level">65%</span>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">🔧</div>
-          <h3>Git &amp; GitHub</h3>
-          <p>Version control and collaborative development workflows.</p>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-level="85%"></div>
-          </div>
-          <span class="skill-level">85%</span>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">📱</div>
-          <h3>Responsive Design</h3>
-          <p>Creating layouts that work seamlessly across all devices.</p>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-level="88%"></div>
-          </div>
-          <span class="skill-level">88%</span>
-        </div>
-
-      </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="filters">
+      <button class="f active" data-f="all">All</button>
+      <button class="f" data-f="web">Web</button>
+      <button class="f" data-f="py">Python</button>
+    </div>
+    <div class="grid">
+      <div class="card fade" data-c="web"><b>Weather App</b><p>Real-time weather dashboard using a public API.</p><small>HTML · CSS · JS</small></div>
+      <div class="card fade" data-c="py"><b>Task Manager CLI</b><p>Python CLI to track to-dos with priorities and due dates.</p><small>Python · SQLite</small></div>
+      <div class="card fade" data-c="web"><b>Quiz Platform</b><p>Interactive quiz app with score tracking and a timer.</p><small>HTML · CSS · JS</small></div>
     </div>
   </section>
 
-  <!-- ── PROJECTS ── -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-
-      <!-- Filter tabs — JS switches visibility -->
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="web">Web</button>
-        <button class="filter-btn" data-filter="python">Python</button>
-      </div>
-
-      <div class="projects-grid">
-
-        <div class="project-card" data-category="web">
-          <div class="project-header">
-            <span class="project-tag">Web</span>
-          </div>
-          <h3>Weather App</h3>
-          <p>A clean weather dashboard that fetches real-time data using a public API and displays forecasts beautifully.</p>
-          <div class="project-tech">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link">Live Demo →</a>
-            <a href="#" class="project-link">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="python">
-          <div class="project-header">
-            <span class="project-tag">Python</span>
-          </div>
-          <h3>Task Manager CLI</h3>
-          <p>A command-line task manager built with Python that helps you track to-dos with priority levels and due dates.</p>
-          <div class="project-tech">
-            <span>Python</span><span>SQLite</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="web">
-          <div class="project-header">
-            <span class="project-tag">Web</span>
-          </div>
-          <h3>Quiz Platform</h3>
-          <p>An interactive quiz app with multiple categories, score tracking, and a timer for each question.</p>
-          <div class="project-tech">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link">Live Demo →</a>
-            <a href="#" class="project-link">GitHub →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
+  <section id="contact" class="alt fade">
+    <h2>Get In Touch</h2>
+    <p>Have a project in mind? Drop me a message.</p>
+    <form id="form">
+      <input name="name" placeholder="Name" />
+      <input name="email" placeholder="Email" type="email" />
+      <textarea name="msg" placeholder="Message" rows="4"></textarea>
+      <button class="btn" type="submit">Send</button>
+      <p id="msg"></p>
+    </form>
   </section>
 
-  <!-- ── CONTACT ── -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="contact-subtitle">Have a project in mind or just want to say hi? Drop me a message.</p>
-
-      <div class="contact-layout">
-
-        <!-- Quick links -->
-        <div class="contact-links">
-          <a href="mailto:siddh@example.com" class="contact-card">
-            <span class="contact-icon">✉️</span>
-            <span>siddh@example.com</span>
-          </a>
-          <a href="https://github.com/" target="_blank" class="contact-card">
-            <span class="contact-icon">💻</span>
-            <span>GitHub</span>
-          </a>
-          <a href="https://linkedin.com/" target="_blank" class="contact-card">
-            <span class="contact-icon">🔗</span>
-            <span>LinkedIn</span>
-          </a>
-        </div>
-
-        <!-- Contact form — validated + submitted by JS -->
-        <form id="contact-form" class="contact-form" novalidate>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="off" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
-          <p id="form-message" class="form-message"></p>
-        </form>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ── -->
-  <footer class="footer">
-    <p>Designed &amp; Built by Siddh · <span id="year"></span></p>
-  </footer>
-
-  <!-- ── BACK TO TOP ── (shown/hidden by JS) -->
-  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <footer>Built by Siddh · <span id="yr"></span></footer>
+  <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 
   <script src="script.js"></script>
 </body>
