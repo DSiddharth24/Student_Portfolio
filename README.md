@@ -74,8 +74,8 @@ cd Student_Portfolio
 | Name        | Role               |
 |-------------|--------------------|
 | D Siddharth | Developer / Design |
-| Karan MS    | Developer          |
-
+| Karan M     | Developer          |
+| Poorvik NS  | Coder              |
 ---
 
 ## License
