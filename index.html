@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- ── NAVBAR ── -->
   <nav class="navbar">
     <div class="nav-brand">Siddh.</div>
     <ul class="nav-links">
@@ -17,14 +17,21 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <!-- Hamburger (JS-driven) -->
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-content">
       <p class="hero-greeting">Hi, I'm</p>
       <h1 class="hero-name">Siddh</h1>
-      <p class="hero-role">Computer Science Student &amp; Aspiring Developer</p>
+      <!-- typed text — content swapped by JS -->
+      <p class="hero-role"><span id="typed-role"></span><span class="cursor">|</span></p>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -35,7 +42,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ── ABOUT ── -->
   <section id="about" class="section about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
@@ -67,51 +74,92 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- ── SKILLS ── -->
   <section id="skills" class="section skills">
     <div class="container">
       <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
+
         <div class="skill-card">
           <div class="skill-icon">🌐</div>
           <h3>HTML &amp; CSS</h3>
           <p>Building responsive, accessible, and well-structured web pages.</p>
+          <!-- progress bar — width animated by JS on scroll -->
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-level="90%"></div>
+          </div>
+          <span class="skill-level">90%</span>
         </div>
+
         <div class="skill-card">
           <div class="skill-icon">⚡</div>
           <h3>JavaScript</h3>
           <p>Writing interactive and dynamic functionality for the web.</p>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-level="75%"></div>
+          </div>
+          <span class="skill-level">75%</span>
         </div>
+
         <div class="skill-card">
           <div class="skill-icon">🐍</div>
           <h3>Python</h3>
           <p>Scripting, automation, and backend development.</p>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-level="80%"></div>
+          </div>
+          <span class="skill-level">80%</span>
         </div>
+
         <div class="skill-card">
           <div class="skill-icon">🗄️</div>
           <h3>SQL</h3>
           <p>Querying and managing relational databases.</p>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-level="65%"></div>
+          </div>
+          <span class="skill-level">65%</span>
         </div>
+
         <div class="skill-card">
           <div class="skill-icon">🔧</div>
           <h3>Git &amp; GitHub</h3>
           <p>Version control and collaborative development workflows.</p>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-level="85%"></div>
+          </div>
+          <span class="skill-level">85%</span>
         </div>
+
         <div class="skill-card">
           <div class="skill-icon">📱</div>
           <h3>Responsive Design</h3>
           <p>Creating layouts that work seamlessly across all devices.</p>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-level="88%"></div>
+          </div>
+          <span class="skill-level">88%</span>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- ── PROJECTS ── -->
   <section id="projects" class="section projects">
     <div class="container">
       <h2 class="section-title">Projects</h2>
+
+      <!-- Filter tabs — JS switches visibility -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+      </div>
+
       <div class="projects-grid">
-        <div class="project-card">
+
+        <div class="project-card" data-category="web">
           <div class="project-header">
             <span class="project-tag">Web</span>
           </div>
@@ -126,7 +174,7 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="python">
           <div class="project-header">
             <span class="project-tag">Python</span>
           </div>
@@ -140,7 +188,7 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="web">
           <div class="project-header">
             <span class="project-tag">Web</span>
           </div>
@@ -154,36 +202,65 @@
             <a href="#" class="project-link">GitHub →</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ── CONTACT ── -->
   <section id="contact" class="section contact">
     <div class="container">
       <h2 class="section-title">Get In Touch</h2>
-      <p class="contact-subtitle">Have a project in mind or just want to say hi? My inbox is always open.</p>
-      <div class="contact-links">
-        <a href="mailto:siddh@example.com" class="contact-card">
-          <span class="contact-icon">✉️</span>
-          <span>siddh@example.com</span>
-        </a>
-        <a href="https://github.com/" target="_blank" class="contact-card">
-          <span class="contact-icon">💻</span>
-          <span>GitHub</span>
-        </a>
-        <a href="https://linkedin.com/" target="_blank" class="contact-card">
-          <span class="contact-icon">🔗</span>
-          <span>LinkedIn</span>
-        </a>
+      <p class="contact-subtitle">Have a project in mind or just want to say hi? Drop me a message.</p>
+
+      <div class="contact-layout">
+
+        <!-- Quick links -->
+        <div class="contact-links">
+          <a href="mailto:siddh@example.com" class="contact-card">
+            <span class="contact-icon">✉️</span>
+            <span>siddh@example.com</span>
+          </a>
+          <a href="https://github.com/" target="_blank" class="contact-card">
+            <span class="contact-icon">💻</span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" class="contact-card">
+            <span class="contact-icon">🔗</span>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <!-- Contact form — validated + submitted by JS -->
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+          <p id="form-message" class="form-message"></p>
+        </form>
+
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ── FOOTER ── -->
   <footer class="footer">
-    <p>Designed &amp; Built by Siddh · 2026</p>
+    <p>Designed &amp; Built by Siddh · <span id="year"></span></p>
   </footer>
 
+  <!-- ── BACK TO TOP ── (shown/hidden by JS) -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
